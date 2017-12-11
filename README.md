@@ -1,6 +1,6 @@
 # Modular Javascript with ES5
 
-It is important to build maintainable applications based on reusable components when coding with javascript, and to implement it we should consider some patterns and tools that helps, since native javascript do not contain some built in functionality for doing it.
+It is important to build maintainable applications based on reusable components when coding with javascript, and to implement it we should consider some patterns and tools founded with ths community, since native javascript do not contain built-in functionality for doing it.
 
 A module is a bunch of code that encapsulates implementation details of a common functionality and expose a public API that make it reusable.
 
