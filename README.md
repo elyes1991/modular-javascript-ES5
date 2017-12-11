@@ -163,6 +163,87 @@ To add the support of the AMD format we should add the **requirejs** module load
 
 ------------
 
+
+## Using CommonJS
+
+The CommonJS module format is the nodejs way for writing module code in javaScript.
+
+
+##### Installing npm packages
+    cd CommonJS/ 
+    npm install
+
+
+
+##### Example directory structure
+    ├── CommonJS
+    │   ├── js                    			# Js files folder
+    │       ├── app.js         			# Main application file
+    │       ├── module1.js 			# Module 1 Implementation 
+    │       └── module2.js 			# Module 2 Implementation 
+	├── package.json
+    └── index.html
+
+The **define ** keywork defines the module as a function parameter, the first paramter is an array containing the dependencies of the defined module (if we have no dependency we put an empty array **[]**).  
+> ##### js/module1.js
+```javascript
+function doWork() {
+    console.log("Module 1 do work");
+}
+module.exports = {
+    doWork: doWork
+};
+```
+> ##### js/module2.js
+```javascript
+function doWork() {
+    console.log("Module 2 do work");
+}
+module.exports = {
+    doWork: doWork
+};
+```
+> ##### js/app.js
+```javascript
+var module1 = require('./module1.js');
+var module2 = require('./module2.js');
+module1.doWork();
+module2.doWork();
+```
+> ##### index.html
+To work with CommonJS module format we can include the module loader  **system.js** as a dependency on our web page, it will enable us to use the **require** keyword that will load dependent modules and also the **module.exports** that will expose public elements.
+```html
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>My App</title>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar navbar-header">
+                <div class="navbar-brand">App</div>
+            </div>
+        </div>
+    </nav>
+  <script type="text/javascript" src="node_modules/systemjs/dist/system.js"></script>
+    <script type="text/javascript">
+        System.config({
+            meta:{
+                format : 'cjs'
+            }
+        });
+        System.import('js/app.js');
+    </script>
+</body>
+</html>
+```
+> ##### log in the browser console
+    // Module 1 do work
+    // Module 2 do work
+
+------------
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
