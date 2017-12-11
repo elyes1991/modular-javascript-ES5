@@ -1,0 +1,21 @@
+{
+  "name": "javascript-modules-amd",
+  "version": "1.0.0",
+  "description": "JavaScript modules ES5 (asynchronous module definition)",
+  "main": "index.js",
+  "dependencies": {
+    "requirejs": "^2.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "http-server"
+  },
+  "keywords": [
+    "JavaScript",
+    "ES5",
+    "AMD",
+    "requirejs"
+  ],
+  "author": "Elyes Bettaieb",
+  "license": "MIT"
+}
