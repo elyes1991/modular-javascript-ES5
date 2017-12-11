@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>My App</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar navbar-header">
+                <div class="navbar-brand">App</div>
+            </div>
+        </div>
+    </nav>
+    <script type="text/javascript" src="node_modules/systemjs/dist/system.js"></script>
+    <script type="text/javascript">
+        System.config({
+            meta:{
+                format : 'cjs'
+            }
+        });
+
+        System.import('js/app.js');
+    </script>
+</body>
+
+</html>

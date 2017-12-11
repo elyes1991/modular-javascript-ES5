@@ -1,0 +1,21 @@
+{
+  "name": "javascript-modules-commonjs",
+  "version": "1.0.0",
+  "description": "JavaScript modules ES5 (CommonJS)",
+  "main": "index.js",
+  "dependencies": {
+    "systemjs": "^0.20.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "http-server"
+  },
+  "keywords": [
+    "JavaScript",
+    "ES5",
+    "CommonJS",
+    "SystemJS"
+  ],
+  "author": "Elyes Bettaieb",
+  "license": "MIT"
+}
