@@ -107,7 +107,7 @@ We can install the http-server package to serve static files.
 	├── package.json
     └── index.html
 
-The **define ** keywork defines the module as a function parameter, the first paramter is an array containing the dependencies of the defined module (if we have no dependency we put an empty array **[]**).  
+The **define** keywork defines the module as a function parameter, the first paramter is an array containing the dependencies of the defined module (if we have no dependency we put an empty array **[]**).  
 > ##### js/module1.js
 ```javascript
 define([], function () {
@@ -138,7 +138,7 @@ define(['./module1', './module2'], function (module1, module2) {
 });
 ```
 > ##### index.html
-To add the support of the AMD format we should add the **requirejs** module loader as a js dependency on our web page, and specify **data-main** attribute and pass the main app file which is in our case app.js.
+To add the support of the AMD format we should add the **requirejs** module loader as a js dependency on our web page, and specify **data-main** attribute and pass the main app file path which is in our case app.js.
 ```html
 <html>
 <head>
