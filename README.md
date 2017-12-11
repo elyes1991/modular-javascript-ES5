@@ -88,12 +88,80 @@ var module2 = function () {
 
 ## Using Asynchronous Module Definition (AMD)
 
-The module pattern is a design pattern and the most basic way to implement modularity in ES5 using native javascript (no external tools).
+AMD format is a specification for defining modules and their dependencies, and load them asynchronously if desired.
 
 
+##### Installing npm packages
+    npm install http-server -g 
+    cd AMD/ 
+    npm install
 
+We can install the http-server package to serve static files.
 
+##### Example directory structure
+    ├── AMD
+    │   ├── js                    			# Js files folder
+    │       ├── app.js         			# Main application file
+    │       ├── module1.js 			# Module 1 Implementation 
+    │       └── module2.js 			# Module 2 Implementation 
+	├── package.json
+    └── index.html
 
+The **define ** keywork defines the module as a function parameter, the first paramter is an array containing the dependencies of the defined module (if we have no dependency we put an empty array **[]**).  
+> ##### js/module1.js
+```javascript
+define([], function () {
+    function doWork() {
+        console.log("Module 1 do work");
+    }
+    return {
+        doWork: doWork
+    }
+});
+```
+> ##### js/module2.js
+```javascript
+define([], function () {
+    function doWork() {
+        console.log("Module 2 do work");
+    }
+    return {
+        doWork: doWork
+    }
+});
+```
+> ##### js/app.js
+```javascript
+define(['./module1', './module2'], function (module1, module2) {
+    module1.doWork();
+    module2.doWork();
+});
+```
+> ##### index.html
+To add the support of the AMD format we should add the **requirejs** module loader as a js dependency on our web page, and specify **data-main** attribute and pass the main app file which is in our case app.js.
+```html
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>My App</title>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar navbar-header">
+                <div class="navbar-brand">App</div>
+            </div>
+        </div>
+    </nav>
+    <script type="text/javascript" data-main="js/app.js" src="node_modules/requirejs/require.js"></script>
+</body>
+</html>
+```
+> ##### log in the browser console
+    // Module 1 do work
+    // Module 2 do work
+
+------------
 
 ## License
 
