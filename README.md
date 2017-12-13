@@ -1,6 +1,6 @@
 # Modular Javascript with ES5
 
-It is important to build maintainable applications based on reusable components when coding with javascript, and to implement it we should consider some patterns and tools founded with ths community, since native javascript do not contain built-in functionality for doing it.
+It is important to build maintainable applications based on reusable components when coding with javascript, and to implement it we should consider some patterns and tools founded with ths community, since native javascript doesn't contain built-in functionality for doing it.
 
 A module is a bunch of code that encapsulates implementation details of a common functionality and expose a public API that make it reusable.
 
@@ -183,8 +183,7 @@ The CommonJS module format is the nodejs way for writing module code in javaScri
     │       └── module2.js 			# Module 2 Implementation 
 	├── package.json
     └── index.html
-
-The **define ** keywork defines the module as a function parameter, the first paramter is an array containing the dependencies of the defined module (if we have no dependency we put an empty array **[]**).  
+  
 > ##### js/module1.js
 ```javascript
 function doWork() {
@@ -211,7 +210,7 @@ module1.doWork();
 module2.doWork();
 ```
 > ##### index.html
-To work with CommonJS module format we can include the module loader  **system.js** as a dependency on our web page, it will enable us to use the **require** keyword that will load dependent modules and also the **module.exports** that will expose public elements.
+To work with CommonJS module format we can include the module loader  **system.js** as a dependency on our web page, it will allow us to use the **require** keyword that will load dependent modules and also the **module.exports** that will expose public elements.
 ```html
 <html>
 <head>
